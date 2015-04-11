@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "posts#index"
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.

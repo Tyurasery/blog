@@ -1,25 +1,30 @@
 %h1 Listing posts
-
-%table
-  %thead
-    %tr
-      %th Content
-      %th Author user name
-      %th Title
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
+.col-lg-2
+.col-lg-8
+  %table
+    %thead
       %tr
-        %td= post.content
-        %td= post.author_user_name
-        %td= post.title
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th
+  .forma
+    = search_form_for @q do |f|
+      =f.search_field :title_start
+      =f.submit
+    = sort_link(@q, :name)
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td
+            .contshow
+              = post.content
+              = post.author_user_name
+              = post.title
+              - if current_user.admin?
+                = link_to 'Show', post
+                = link_to 'Edit', edit_post_path(post)
+                = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+.col-lg-2
 %br
-
+.btn
 = link_to 'New Post', new_post_path
+= button_to('Log Out', destroy_user_session_path, class:'btn btn-danger', :method => :delete)
