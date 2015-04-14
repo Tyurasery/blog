@@ -1,28 +1,21 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Gems used:
+'haml'
+'haml-rails'
+'simple_form'
+'autoprefixer-rails'
+'bootstrap-sass'
+'ransack'
+'devise'
+'tinymce-rails'
+'carrierwave'
+What have been done:
+Created model for posts;
+Added user authentication;
+Inserted text editor to posts content field;
+Created uploader for post's thumbnails;
+Added search field for posts;
+What I learned:
+- How to use devise gem and add admine role to users model;
+- How to use ransack gem to filter posts;
+- How to create file uploader for model;
+- How to deploy apps to heroku;
