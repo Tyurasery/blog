@@ -1,10 +1,12 @@
 = simple_form_for(@post) do |f|
   = f.error_notification
+  .inputs
+    .col-lg-8
+      = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120
+      = tinymce
+    .col-lg-3
+      = f.text_field :author_user_name, class: "form-control", placeholder: "Username"
+      = f.input :thumb
+      = f.text_field :title, class: "form-control", placeholder: "Title"
 
-  .form-inputs
-    = f.input :content
-    = f.input :author_user_name
-    = f.input :title
-
-  .form-actions
-    = f.button :submit
+      = f.button :submit, class: "btn btn-danger"

@@ -1,29 +1,25 @@
-%h1 Listing posts
-.col-lg-2
-.col-lg-8
+.col-lg-1
+.col-lg-10
   %table
     %thead
       %tr
         %th
-  .forma
     = search_form_for @q do |f|
-      =f.search_field :title_start
-      =f.submit
-    = sort_link(@q, :name)
+      .forma
+        =f.search_field :title_start, class: "form-control"
+        =f.button 'Submit', class: "btn btn-danger"
     %tbody
-      - @posts.each do |post|
-        %tr
-          %td
-            .contshow
-              = post.content
-              = post.author_user_name
+      .post
+        - @posts.each do |post|
+          .contshow
+            .title
               = post.title
-              - if current_user.admin?
-                = link_to 'Show', post
-                = link_to 'Edit', edit_post_path(post)
-                = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-.col-lg-2
+            .thumb
+              = image_tag post.thumb, size: '400x300'
+            .content
+              = raw(post.content)
+              = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
+.col-lg-1
 %br
 .btn
 = link_to 'New Post', new_post_path

@@ -16,18 +16,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
   body{
-    background-color: #008e4a;
+    background-color: #ffffff;
   }
- .col-lg-8 {
+ .col-lg-10 {
    background-color: #ffffff;
-   box-shadow: 0px 0px 3px #515151;
+   min-height: 1000px;
+   max-height: 200%;
  }
- .contshow {
+ .post{
    width: 100%;
    height: auto;
+   background-color: #ffffff;
+ }
+ .title{
+   text-align: center;
+   color: #000000;
+   width: 100%;
+   min-height: 30px;
+   height: auto;
    padding: 5px;
-   background-color: #F7F7F7;
+   font-size: 1em;
+   margin: 0px;
+ }
+ .contshow {
+   display: inline-block;
+   margin: 10px;
+   width: 30%;
+   height: auto;
+   background-color: white;
+   overflow: hidden;
+   box-shadow: 0px 0px 2px rgba(94, 94, 94, 0.5);
  }
  .forma{
    margin: 20px;
+   width: 30%;
+   height: auto;
  }
+.thumb{
+  width: 100%;
+  height: auto;
+}
+.content{
+  margin: 5px;
+  text-align: center;
+}
