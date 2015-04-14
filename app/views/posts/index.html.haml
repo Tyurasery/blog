@@ -1,13 +1,13 @@
+.col-lg-13
+  .navbar
+    .search
+      = search_form_for @q do |f|
+        .form-inline
+          =f.search_field :title_start, class: "form-control", placeholder: "Search"
+          =f.submit "Go", class: "btn btn-success"
 .col-lg-1
 .col-lg-10
   %table
-    %thead
-      %tr
-        %th
-    = search_form_for @q do |f|
-      .forma
-        =f.search_field :title_start, class: "form-control"
-        =f.button 'Submit', class: "btn btn-danger"
     %tbody
       .post
         - @posts.each do |post|
@@ -21,6 +21,5 @@
               = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
 .col-lg-1
 %br
-.btn
-= link_to 'New Post', new_post_path
+= link_to 'New Post', new_post_path, class:'btn btn-success'
 = button_to('Log Out', destroy_user_session_path, class:'btn btn-danger', :method => :delete)
